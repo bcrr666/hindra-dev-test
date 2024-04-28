@@ -27,3 +27,21 @@ module.exports.registerOffer = async (event) => {
 
   return responseService.json(`La oferta. ${body.name} fue registrada.`)
 };
+
+module.exports.offers = async (event) => {
+
+  let query = "select * from offers";
+
+  let [results]  = await connection.query(query);
+
+  return responseService.json(`Lista de ofertas.`, results)
+};
+
+module.exports.offerById = async (event) => {
+
+  let query = "select * from offers where id = ?";
+  let data = [event.pathParameters.id]
+
+  let [results]  = await connection.query(query, data);
+  return responseService.json(`Lista de ofertas.`, results[0])
+};

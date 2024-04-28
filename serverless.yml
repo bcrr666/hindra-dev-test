@@ -75,6 +75,18 @@ functions:
       - http:
           method: POST
           path: /registerOffer
+  offers:
+    handler: handler.offers
+    events:
+      - http:
+          method: GET
+          path: /offers
+  offerById:
+    handler: handler.offerById
+    events:
+      - http:
+          method: GET
+          path: /offers/{id}
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
