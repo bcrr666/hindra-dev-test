@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@serverless/sdk": "^0.5.26",
+    "axios": "^1.6.8"
+  },
+  "name": "hindra-dev-test",
+  "devDependencies": {
+    "serverless-offline": "^13.5.0"
+  }
+}
