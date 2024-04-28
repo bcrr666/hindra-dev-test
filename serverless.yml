@@ -69,6 +69,12 @@ functions:
       - http:
           method: GET
           path: /films
+  registerOffer:
+    handler: handler.registerOffer
+    events:
+      - http:
+          method: POST
+          path: /registerOffer
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
