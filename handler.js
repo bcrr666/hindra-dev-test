@@ -21,7 +21,7 @@ module.exports.registerOffer = async (event) => {
   }
 
   try {
-    const offer = await offerService.register(data)
+    await offerService.register(data)
   } catch (error) {
     console.error('Error al insertar usuario:', error);
   }

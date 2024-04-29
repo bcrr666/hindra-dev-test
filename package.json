@@ -8,7 +8,6 @@
   },
   "name": "hindra-dev-test",
   "devDependencies": {
-    "jest-cucumber": "^4.2.0",
     "serverless-offline": "^13.5.0"
   }
 }
