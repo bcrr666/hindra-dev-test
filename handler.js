@@ -12,12 +12,12 @@ module.exports.registerOffer = async (event) => {
   
   const body = JSON.parse(event.body)
   const data = {
-    'user_id': body.user_id,
-    'name': body.name,
-    'base_amount': body.base_amount,
-    'sales_expectation': body.sales_expectation,
-    'start_date': body.start_date,
-    'end_date': body.end_date
+    'codigo_usuario': body.user_id,
+    'nombre': body.name,
+    'precio_base': body.base_amount,
+    'precio_venta': body.sales_expectation,
+    'fecha_inicio': body.start_date,
+    'fecha_fin': body.end_date
   }
 
   try {

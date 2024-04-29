@@ -5,8 +5,9 @@ const { mockList } = require('../mocks/list-offers.mock.js')
 describe('List offers', () => {
 
   test('when get list offers', async () => {
-    const result = await offerService.list();
 
+    const result = await offerService.list();
     expect(result)
+    
   })
 })

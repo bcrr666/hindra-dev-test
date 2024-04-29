@@ -6,12 +6,12 @@ describe('Find offer by id', () => {
   test('when register offer', async () => {
 
     const data = {
-      'user_id': 1,
-      'name': "Funko goku",
-      'base_amount': "10.00",
-      'sales_expectation': "70.00",
-      'start_date': "2024-04-30 12:00:00",
-      'end_date': "2024-05-30 12:00:00"
+      'codigo_usuario': 1,
+      'nombre': "Funko goku",
+      'precio_base': "10.00",
+      'precio_venta': "70.00",
+      'fecha_inicio': "2024-04-30 12:00:00",
+      'fecha_fin': "2024-05-30 12:00:00"
     }
 
     const offer = await offerService.register(data);
