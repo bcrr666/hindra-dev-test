@@ -68,7 +68,7 @@ functions:
     events:
       - http:
           method: GET
-          path: /films
+          path: /films/{id}
   registerOffer:
     handler: handler.registerOffer
     events:
@@ -81,8 +81,8 @@ functions:
       - http:
           method: GET
           path: /offers
-  offerById:
-    handler: handler.offerById
+  findById:
+    handler: handler.findById
     events:
       - http:
           method: GET
