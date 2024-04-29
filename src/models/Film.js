@@ -27,23 +27,23 @@ const Film = sequelize.define('film', {
     allowNull: false
   },
   characters: {
-    type: DataTypes.ARRAY,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   },
   planets: {
-    type: DataTypes.ARRAY,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   },
   starships: {
-    type: DataTypes.ARRAY,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   },
   vehicles: {
-    type: DataTypes.ARRAY,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   },
   species: {
-    type: DataTypes.ARRAY,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   },
   created: {

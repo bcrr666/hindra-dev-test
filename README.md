@@ -1,6 +1,6 @@
 # Prueba tecnica
 
-Mediante el uso de serverless podremos realizar el consumo de servicios y hacer uso de recuersos solo en el momento que sea necesario.
+Mediante el uso de serverless podremos realizar el consumo de servicios y hacer uso de recursos  solo en el momento que sea necesario.
 
 ### Requerimientos
 - Node v20.10.0 o superior

@@ -2,42 +2,48 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Offer = sequelize.define('offer', {
-  id: {
+  codigo: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    allowNull: true
+    allowNull: true,
+    field: 'id'
   },
-  user_id: {
+  codigo_usuario: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    isInt: true
+    isInt: true,
+    field: 'user_id'
   },
-  name: {
+  nombre: {
     type: DataTypes.STRING,
-    allowNull: false
-  }
-  ,
-  base_amount: {
+    allowNull: false,
+    field: 'name'
+  },
+  precio_base: {
     type: DataTypes.DECIMAL,
     allowNull: false,
-    isDecimal: true
+    isDecimal: true,
+    field: 'base_amount'
   }
   ,
-  sales_expectation: {
+  precio_venta: {
     type: DataTypes.DECIMAL,
     allowNull: false,
-    isDecimal: true
+    isDecimal: true,
+    field: 'sales_expectation'
   }
   ,
-  start_date: {
+  fecha_inicio: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: false,
+    field: 'start_date'
   }
   ,
-  end_date: {
+  fecha_fin: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: false,
+    field: 'end_date'
   }
 });
 
