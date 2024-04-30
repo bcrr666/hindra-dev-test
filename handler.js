@@ -5,6 +5,11 @@ const { filmService } = require('./src/services/FilmService')
 
 module.exports.films = async (event) => {
   const film = await filmService.findById(event.pathParameters.id)
+
+  if (film == 404) {
+    return responseService.json('Ocurrio un error al realizar la busqueda', {}, 404)
+  }
+
   return responseService.json('Informacion de la peliculas', film)
 };
 
