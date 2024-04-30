@@ -35,7 +35,7 @@ const Film = sequelize.define('film', {
     field: 'producer'
   },
   fecha_lanzamiento: {
-    type: DataTypes.DATE,
+    type: DataTypes.DATEONLY,
     allowNull: false,
     field: 'release_date'
   },

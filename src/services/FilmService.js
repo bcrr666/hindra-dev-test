@@ -21,7 +21,7 @@ class FilmService {
     } catch (error) {
 
       console.error('Ocurrió un error al registrar una pelicula:', error.message);
-
+      
     }
   }
 
