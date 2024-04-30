@@ -27,9 +27,7 @@ class SpecieService {
       }
 
     } catch (error) {
-      console.error('Ocurrió un error al buscar la especie:', error.message);
       return error.response.status
-      
     }
   }
 }

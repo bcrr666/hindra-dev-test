@@ -33,15 +33,15 @@ module.exports.registerFilm = async (event) => {
   try {
     await filmService.register(data)
   } catch (error) {
-    console.error('Error al insertar usuario.', error);
+    return responseService.json(`Error al registrar la pelicula.`)
   }
   
-  return responseService.json(`La oferta. ${body.title} fue registrada.`)
+  return responseService.json(`La pelicula. ${body.title} fue registrada.`)
 };
 
 module.exports.listFilms = async (event) => {
   const offers = await filmService.list()
-  return responseService.json(`Lista de ofertas.`, offers)
+  return responseService.json(`Lista de peliculas.`, offers)
 };
 
 module.exports.findSpecieById = async (event) => {
