@@ -1,9 +1,9 @@
 'use strict';
 const responseService = require('./provider/response-service-provider');
-const { offerService } = require('./src/services/OfferService')
 const { filmService } = require('./src/services/FilmService')
+const { specieService } = require('./src/services/SpecieService')
 
-module.exports.films = async (event) => {
+module.exports.finndFilmById = async (event) => {
   const film = await filmService.findById(event.pathParameters.id)
 
   if (film == 404) {
@@ -13,33 +13,43 @@ module.exports.films = async (event) => {
   return responseService.json('Informacion de la peliculas', film)
 };
 
-module.exports.registerOffer = async (event) => {
-  
+module.exports.registerFilm = async (event) => {
   const body = JSON.parse(event.body)
   const data = {
-    'codigo_usuario': body.user_id,
-    'nombre': body.name,
-    'precio_base': body.base_amount,
-    'precio_venta': body.sales_expectation,
-    'fecha_inicio': body.start_date,
-    'fecha_fin': body.end_date
+    'titulo': body.title,
+    'codigo_episodio': body.episode_id,
+    'sinopsis': body.opening_crawl,
+    'director': body.director,
+    'productor': body.producer,
+    'fecha_lanzamiento': body.release_date,
+    'personajes': body.characters,
+    'planetas': body.planets,
+    'naves_estelares': body.starships,
+    'vehiculos': body.vehicles,
+    'especies': body.species,
+    'enlace': body.url
   }
 
   try {
-    await offerService.register(data)
+    await filmService.register(data)
   } catch (error) {
-    console.error('Error al insertar usuario:', error);
+    console.error('Error al insertar usuario.', error);
   }
   
-  return responseService.json(`La oferta. ${body.name} fue registrada.`)
+  return responseService.json(`La oferta. ${body.title} fue registrada.`)
 };
 
-module.exports.offers = async (event) => {
-  const offers = await offerService.list()
+module.exports.listFilms = async (event) => {
+  const offers = await filmService.list()
   return responseService.json(`Lista de ofertas.`, offers)
 };
 
-module.exports.findById = async (event) => {
-  const offer = await offerService.findById(event.pathParameters.id)
-  return responseService.json(`Informacion de la oferta.`, offer)
+module.exports.findSpecieById = async (event) => {
+  const specie = await specieService.findById(event.pathParameters.id)
+
+  if (specie == 404) {
+    return responseService.json('Ocurrio un error al realizar la busqueda', {}, 404)
+  }
+
+  return responseService.json('Informacion de la peliculas', specie)
 };

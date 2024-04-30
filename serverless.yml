@@ -63,30 +63,30 @@ plugins:
 #    - include-me-dir/**
 
 functions:
-  films:
-    handler: handler.films
+  finndFilmById:
+    handler: handler.finndFilmById
     events:
       - http:
           method: GET
           path: /films/{id}
-  registerOffer:
-    handler: handler.registerOffer
+  registerFilm:
+    handler: handler.registerFilm
     events:
       - http:
           method: POST
-          path: /registerOffer
-  offers:
-    handler: handler.offers
+          path: /films
+  listFilms:
+    handler: handler.listFilms
     events:
       - http:
           method: GET
-          path: /offers
-  findById:
-    handler: handler.findById
+          path: /films
+  findSpecieById:
+    handler: handler.findSpecieById
     events:
       - http:
           method: GET
-          path: /offers/{id}
+          path: /species/{id}
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

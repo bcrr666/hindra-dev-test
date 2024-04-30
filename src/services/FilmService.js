@@ -6,32 +6,30 @@ class FilmService {
 
   async findById(id) {
 
+    const film = await Film.findOne({where: {id: id}});
+    return film;
+
+  }
+    
+  async register(data) {
+
     try {
 
-      const response = await axios.get(`https://swapi.py4e.com/api/films/${id}`);
-      const film = response.data;
-      return {
-        titulo: film.title,
-        codigo_episodio: film.episode_id,
-        sinopsis : film.opening_crawl,
-        director: film.director,
-        productor: film.producer,
-        fecha_lanzamiento: film.release_date,
-        personajes: film.characters,
-        planetas: film.planets,
-        naves_estelares: film.starships,
-        vehiculos: film.vehicles,
-        especies: film.species,
-        creado_en: film.created,
-        editado_en: film.edited,
-        enlace: film.url,
-      }
+      const film = await Film.create(data);
+      return film;
 
     } catch (error) {
-      console.error('Ocurrió un error:', error.message);
-      return error.response.status
-      
+
+      console.error('Ocurrió un error al registrar una pelicula:', error.message);
+
     }
+  }
+
+  async list() {
+
+    const films = await Film.findAll();
+    return films;
+
   }
 }
 

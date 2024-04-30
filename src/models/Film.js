@@ -2,61 +2,82 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Film = sequelize.define('film', {
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  episode_id: {
+  codigo: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: true,
+    field: 'id'
   },
-  opening_crawl: {
+  titulo: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    field: 'title'
+  },
+  codigo_episodio: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'episode_id'
+  },
+  sinopsis: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    field: 'opening_crawl'
   },
   director: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    field: 'director'
   },
-  producer: {
+  productor: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    field: 'producer'
   },
-  release_date: {
+  fecha_lanzamiento: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: false,
+    field: 'release_date'
   },
-  characters: {
+  personajes: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
+    allowNull: false,
+    field: 'characters'
   },
-  planets: {
+  planetas: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
+    allowNull: false,
+    field: 'planets'
   },
-  starships: {
+  naves_estelares: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
+    allowNull: false,
+    field: 'starships'
   },
-  vehicles: {
+  vehiculos: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
+    allowNull: false,
+    field: 'vehicles'
   },
-  species: {
+  especies: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
+    allowNull: false,
+    field: 'species'
   },
-  created: {
+  creado_en: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: true,
+    field: 'createdAt'
   },
-  edited: {
+  editado_en: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: true,
+    field: 'updatedAt'
   },
-  url: {
+  enlace: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    field: 'url'
   },
 });
 
