@@ -6,8 +6,8 @@ const { specieService } = require('./src/services/SpecieService')
 module.exports.finndFilmById = async (event) => {
   const film = await filmService.findById(event.pathParameters.id)
 
-  if (film == 404) {
-    return responseService.json('Ocurrio un error al realizar la busqueda', {}, 404)
+  if (film == null) {
+    return responseService.json('Pelicula no encontrada', {}, 404)
   }
 
   return responseService.json('Informacion de la peliculas', film)
@@ -48,8 +48,8 @@ module.exports.findSpecieById = async (event) => {
   const specie = await specieService.findById(event.pathParameters.id)
 
   if (specie == 404) {
-    return responseService.json('Ocurrio un error al realizar la busqueda', {}, 404)
+    return responseService.json('Especie no encontrada', {}, 404)
   }
 
-  return responseService.json('Informacion de la peliculas', specie)
+  return responseService.json('Informacion de la especie', specie)
 };

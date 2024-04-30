@@ -2,7 +2,7 @@
 
 Mediante el uso de serverless podremos realizar el consumo de servicios y hacer uso de recursos  solo en el momento que sea necesario.
 
-### Requerimientos
+## Requerimientos
 - Node v20.10.0 o superior
 - MSQL 5.7.x o superior
 
@@ -21,10 +21,10 @@ El proyecto esta construido con Serverless en su version 0.5.26 (https://www.ser
 `serverless deploy`
 
 
-## Documentacion
+## Documentacion - Peliculas
 
 ### Busqueda de peliculas
-La busqueda por id consta de 1 campo necesario:
+La busqueda consta de 1 campo necesario:
 
 * id
 
@@ -39,107 +39,134 @@ La busqueda por id consta de 1 campo necesario:
 {
     "message": "Informacion de la peliculas",
     "data": {
-        "title": "A New Hope",
-        "episode_id": 4,
-        "opening_crawl": "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....",
-        "director": "George Lucas",
-        "producer": "Gary Kurtz, Rick McCallum",
-        "release_date": "1977-05-25",
-        "characters": [
+        "codigo": 2,
+        "titulo": "punku",
+        "codigo_episodio": 55,
+        "sinopsis": "Punku es un inca que pasa por mill aventuras junto asus amigos con mucha valentia.",
+        "director": "Son Goku",
+        "productor": "Krilin",
+        "fecha_lanzamiento": "1977-05-25",
+        "personajes": [
             "https://swapi.py4e.com/api/people/1/",
-            "https://swapi.py4e.com/api/people/2/"
+            "https://swapi.py4e.com/api/people/6/"
         ],
-        "planets": [
+        "planetas": [
             "https://swapi.py4e.com/api/planets/1/",
-            "https://swapi.py4e.com/api/planets/2/"
+            "https://swapi.py4e.com/api/planets/3/"
         ],
-        "starships": [
+        "naves_estelares": [
             "https://swapi.py4e.com/api/starships/2/",
-            "https://swapi.py4e.com/api/starships/13/"
+            "https://swapi.py4e.com/api/starships/5/"
         ],
-        "vehicles": [
+        "vehiculos": [
             "https://swapi.py4e.com/api/vehicles/7/",
             "https://swapi.py4e.com/api/vehicles/8/"
         ],
-        "species": [
-            "https://swapi.py4e.com/api/species/1/",
-            "https://swapi.py4e.com/api/species/2/"
+        "especies": [
+            "https://swapi.py4e.com/api/species/4/",
+            "https://swapi.py4e.com/api/species/5/"
         ],
-        "created": "2014-12-10T14:23:31.880000Z",
-        "edited": "2014-12-20T19:49:45.256000Z",
-        "url": "https://swapi.py4e.com/api/films/1/"
+        "creado_en": "2024-04-30T20:32:59.000Z",
+        "editado_en": "2024-04-30T20:32:59.000Z",
+        "enlace": "https://swapi.py4e.com/api/films/1/",
+        "createdAt": "2024-04-30T20:32:59.000Z",
+        "updatedAt": "2024-04-30T20:32:59.000Z"
     }
 }
 ```
 
-### Listar ofertas
+`404 Not Found`
+```js
+{
+    "message": "Pelicula no encontrada",
+    "data": {}
+}
+```
+
+### Listar Peliculas
 
 #### Endpoint
 `Type: GET`
-`/dev/offers`
+`/dev/films`
 
 
 #### Respuesta
 `200 Success`
 ```js
 {
-    "message": "Lista de ofertas.",
+    "message": "Lista de peliculas.",
     "data": [
         {
-            "codigo": 1,
-            "codigo_usuario": 66,
-            "nombre": "Funko Goku",
-            "precio_base": "10.00",
-            "precio_venta": "55.00",
-            "fecha_inicio": "2024-04-30T12:00:00.000Z",
-            "fecha_fin": "2024-05-30T12:00:00.000Z",
-            "createdAt": null,
-            "updatedAt": null
+            "codigo": 2,
+            "titulo": "punku",
+            "codigo_episodio": 55,
+            "sinopsis": "Punku es un inca que pasa por mill aventuras junto asus amigos con mucha valentia.",
+            "director": "Son Goku",
+            "productor": "Krilin",
+            "fecha_lanzamiento": "1977-05-25",
+            "personajes": [
+                "https://swapi.py4e.com/api/people/1/",
+                "https://swapi.py4e.com/api/people/5/",
+                "https://swapi.py4e.com/api/people/6/"
+            ],
+            "planetas": [
+                "https://swapi.py4e.com/api/planets/1/",
+                "https://swapi.py4e.com/api/planets/3/"
+            ],
+            "naves_estelares": [
+                "https://swapi.py4e.com/api/starships/2/",
+                "https://swapi.py4e.com/api/starships/5/"
+            ],
+            "vehiculos": [
+                "https://swapi.py4e.com/api/vehicles/4/",
+                "https://swapi.py4e.com/api/vehicles/6/",
+            ],
+            "especies": [
+                "https://swapi.py4e.com/api/species/3/",
+                "https://swapi.py4e.com/api/species/5/"
+            ],
+            "creado_en": "2024-04-30T20:32:59.000Z",
+            "editado_en": "2024-04-30T20:32:59.000Z",
+            "enlace": "https://swapi.py4e.com/api/films/1/",
+            "createdAt": "2024-04-30T20:32:59.000Z",
+            "updatedAt": "2024-04-30T20:32:59.000Z"
         },
         {
-            "codigo": 2,
-            "codigo_usuario": 66,
-            "nombre": "Funko Krilin",
-            "precio_base": "10.00",
-            "precio_venta": "55.00",
-            "fecha_inicio": "2024-04-30T12:00:00.000Z",
-            "fecha_fin": "2024-05-30T12:00:00.000Z",
-            "createdAt": null,
-            "updatedAt": null
-        }      
+            "codigo": 3,
+            "titulo": "Dragon Ball",
+            "codigo_episodio": 55,
+            "sinopsis": "Disfruta con Goku sus sorprendentes aventuras junt oa sus amigos.",
+            "director": "Son Goku",
+            "productor": "Krilin",
+            "fecha_lanzamiento": "1990-05-25",
+            "personajes": [
+                "https://swapi.py4e.com/api/people/1/"
+            ],
+            "planetas": [
+                "https://swapi.py4e.com/api/planets/1/",
+                "https://swapi.py4e.com/api/planets/3/"
+            ],
+            "naves_estelares": [
+                "https://swapi.py4e.com/api/starships/2/",
+                "https://swapi.py4e.com/api/starships/5/"
+            ],
+            "vehiculos": [
+                "https://swapi.py4e.com/api/vehicles/8/"
+            ],
+            "especies": [
+                "https://swapi.py4e.com/api/species/5/"
+            ],
+            "creado_en": "2024-04-30T20:33:34.000Z",
+            "editado_en": "2024-04-30T20:33:34.000Z",
+            "enlace": "https://swapi.py4e.com/api/films/1/",
+            "createdAt": "2024-04-30T20:33:34.000Z",
+            "updatedAt": "2024-04-30T20:33:34.000Z"
+        }
     ]
 }
 ```
 
-### Busqueda por oferta
-La busqueda por id consta de 1 campo necesario:
-
-* id
-
-#### Endpoint
-`Type: GET`
-`/dev/offers/{id}`
-
-#### Respuesta
-`200 Success`
-```js
-{
-    "message": "Informacion de la oferta.",
-    "data": {
-        "codigo": 2,
-        "codigo_usuario": 66,
-        "nombre": "Funko Goku",
-        "precio_base": "10.00",
-        "precio_venta": "55.00",
-        "fecha_inicio": "2024-04-30T12:00:00.000Z",
-        "fecha_fin": "2024-05-30T12:00:00.000Z",
-        "createdAt": null,
-        "updatedAt": null
-    }
-}
-```
-
-### Registrar oferta
+### Registrar pelicula
 
 #### Endpoint
 `Type: POST`
@@ -147,12 +174,42 @@ La busqueda por id consta de 1 campo necesario:
 #### Body
 ```js
 {
-    "user_id": 66,
-    "name": "Funko Goku",
-    "base_amount": 10,
-    "sales_expectation": 55,
-    "start_date": "2024-04-30 12:00:00", 
-    "end_date": "2024-05-30 12:00:00"
+    "title": "punku",
+    "episode_id": 55,
+    "opening_crawl": "Punku es un inca que pasa por mill aventuras junto asus amigos con mucha valentia.",
+    "director": "Son Goku",
+    "producer": "Krilin",
+    "release_date": "1977-05-25",
+    "characters": [
+        "https://swapi.py4e.com/api/people/1/",
+        "https://swapi.py4e.com/api/people/2/",
+        "https://swapi.py4e.com/api/people/3/",
+        "https://swapi.py4e.com/api/people/4/",
+        "https://swapi.py4e.com/api/people/5/",
+        "https://swapi.py4e.com/api/people/6/"
+    ],
+    "planets": [
+        "https://swapi.py4e.com/api/planets/1/",
+        "https://swapi.py4e.com/api/planets/2/",
+        "https://swapi.py4e.com/api/planets/3/"
+    ],
+    "starships": [
+        "https://swapi.py4e.com/api/starships/2/",
+        "https://swapi.py4e.com/api/starships/3/",
+        "https://swapi.py4e.com/api/starships/5/"
+    ],
+    "vehicles": [
+        "https://swapi.py4e.com/api/vehicles/4/",
+        "https://swapi.py4e.com/api/vehicles/6/",
+        "https://swapi.py4e.com/api/vehicles/7/",
+        "https://swapi.py4e.com/api/vehicles/8/"
+    ],
+    "species": [
+        "https://swapi.py4e.com/api/species/3/",
+        "https://swapi.py4e.com/api/species/4/",
+        "https://swapi.py4e.com/api/species/5/"
+    ],
+    "url": "https://swapi.py4e.com/api/films/1/"
 }
 ```
 
@@ -160,7 +217,65 @@ La busqueda por id consta de 1 campo necesario:
 `200 Success`
 ```js
 {
-    "message": "La oferta. Funko Goku fue registrada.",
+    "message": "La oferta. punku fue registrada.",
+    "data": {}
+}
+```
+
+## Documentacion - Especies
+
+### Busqueda de especies
+La busqueda consta de 1 campo necesario:
+
+* id
+
+#### Endpoint
+`Type: GET`
+`/dev/species/{id}`
+
+
+#### Respuesta
+`200 Success`
+```js
+{
+    "message": "Informacion de la especie",
+    "data": {
+        "altura_promedio": "n/a",
+        "promedio_vida": "indefinite",
+        "clasificacion": "artificial",
+        "creado_en": "2014-12-10T15:16:16.259000Z",
+        "designación": "sentient",
+        "editado_en": "2014-12-20T21:36:42.139000Z",
+        "color_ojos": "n/a",
+        "color_pelo": "n/a",
+        "mundo_natal": null,
+        "idioma": "n/a",
+        "gente": [
+            "https://swapi.py4e.com/api/people/2/",
+            "https://swapi.py4e.com/api/people/3/",
+            "https://swapi.py4e.com/api/people/8/",
+            "https://swapi.py4e.com/api/people/23/",
+            "https://swapi.py4e.com/api/people/87/"
+        ],
+        "peliculas": [
+            "https://swapi.py4e.com/api/films/1/",
+            "https://swapi.py4e.com/api/films/2/",
+            "https://swapi.py4e.com/api/films/3/",
+            "https://swapi.py4e.com/api/films/4/",
+            "https://swapi.py4e.com/api/films/5/",
+            "https://swapi.py4e.com/api/films/6/",
+            "https://swapi.py4e.com/api/films/7/"
+        ],
+        "color_piel": "n/a",
+        "enlace": "https://swapi.py4e.com/api/species/2/"
+    }
+}
+```
+
+`404 Not Found`
+```js
+{
+    "message": "Especie no encontrada",
     "data": {}
 }
 ```
