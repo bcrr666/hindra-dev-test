@@ -1,20 +1,24 @@
-const { describe, test, expect, jest: _jest } = require('@jest/globals')
-const { offerService } = require('../../services/OfferService.js')
+const { describe, test, expect } = require('@jest/globals');
+const { offerService } = require('../../services/OfferService.js');
 
 describe('Find offer by id', () => {
 
-  test('when get offer', async () => {
+  test('should get offer by valid id', async () => {
 
-    const offer = await offerService.findById(1);
-    expect(offer)
+    const offerId = 1;
+    const offer = await offerService.findById(offerId);
 
-    })
+    expect(offer).not.toBeNull();
+    expect(offer.dataValues.codigo).toBe(offerId);
 
-  test('when do not get offer', async () => {
+  });
 
-    const offer = await offerService.findById('hola');
-    expect(offer).toBe(null)
+  test('should not get offer by invalid id', async () => {
 
-    })
+    const invalidId = 'hola';
+    const offer = await offerService.findById(invalidId);
 
-})
+    expect(offer).toBeNull();
+    
+  });
+});

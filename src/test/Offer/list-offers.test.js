@@ -1,13 +1,13 @@
-const { describe, test, expect, jest: _jest } = require('@jest/globals')
-const { offerService } = require('../../services/OfferService.js')
-const { mockList } = require('../mocks/list-offers.mock.js')
+const { describe, test, expect } = require('@jest/globals');
+const { offerService } = require('../../services/OfferService.js');
 
 describe('List offers', () => {
 
-  test('when get list offers', async () => {
+  test('should get list of offers', async () => {
 
     const result = await offerService.list();
-    expect(result)
-    
-  })
-})
+
+    expect(result).toBeDefined();
+
+  });
+});

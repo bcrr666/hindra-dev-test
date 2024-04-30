@@ -1,9 +1,9 @@
-const { describe, test, expect, jest: _jest } = require('@jest/globals')
-const { offerService } = require('../../services/OfferService.js')
+const { describe, test, expect } = require('@jest/globals'); 
+const { offerService } = require('../../services/OfferService.js');
 
-describe('Find offer by id', () => {
+describe('Registering an offer', () => {
 
-  test('when register offer', async () => {
+  test('should register an offer', async () => {
 
     const data = {
       'codigo_usuario': 1,
@@ -15,7 +15,15 @@ describe('Find offer by id', () => {
     }
 
     const offer = await offerService.register(data);
-    expect(offer)
+   
+    expect(offer).toBeDefined(); 
+    expect(offer).toHaveProperty('codigo_usuario', 1);
+    expect(offer).toHaveProperty('nombre', 'Funko goku');
+    expect(offer).toHaveProperty('precio_base', '10.00');
+    expect(offer).toHaveProperty('precio_venta', '70.00');
+    expect(offer).toHaveProperty('fecha_inicio');
+    expect(offer).toHaveProperty('fecha_fin');
 
-    })
-})
+  });
+
+});
